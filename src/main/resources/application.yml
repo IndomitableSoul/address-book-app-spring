@@ -5,8 +5,8 @@ spring:
     active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/addressbook_db
-    username: root
-    password: Welcome@123
+    url: ${db_url}
+    username: ${db_username}
+    password: ${db_password}
 server:
   port: 8081
