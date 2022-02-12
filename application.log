@@ -64,3 +64,45 @@
 2022-02-13 01:34:41.623  INFO 52335 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-02-13 01:34:41.625  INFO 52335 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-02-13 01:34:41.632  INFO 52335 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-13 01:57:36.655  WARN 53081 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-13 01:58:06.823  INFO 53223 --- [restartedMain] c.b.a.AddressBookAppApplication          : Starting AddressBookAppApplication using Java 17.0.1 on dell-Latitude-5490 with PID 53223 (/home/dell/BridgeLabz/AddressBookApp/target/classes started by dell in /home/dell/BridgeLabz/AddressBookApp)
+2022-02-13 01:58:06.824  INFO 53223 --- [restartedMain] c.b.a.AddressBookAppApplication          : The following profiles are active: dev
+2022-02-13 01:58:06.870  INFO 53223 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-13 01:58:06.871  INFO 53223 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-13 01:58:07.354  INFO 53223 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-13 01:58:07.363  INFO 53223 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2022-02-13 01:58:07.703  INFO 53223 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-02-13 01:58:07.708  INFO 53223 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-13 01:58:07.708  INFO 53223 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-13 01:58:07.754  INFO 53223 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-13 01:58:07.754  INFO 53223 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 881 ms
+2022-02-13 01:58:07.829  INFO 53223 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-13 01:58:08.018  INFO 53223 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-13 01:58:08.294  INFO 53223 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-13 01:58:08.336  WARN 53223 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-13 01:58:08.551  INFO 53223 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-13 01:58:08.573  INFO 53223 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-02-13 01:58:08.582  INFO 53223 --- [restartedMain] c.b.a.AddressBookAppApplication          : Started AddressBookAppApplication in 2.075 seconds (JVM running for 2.77)
+2022-02-13 01:58:08.585  INFO 53223 --- [restartedMain] c.b.a.AddressBookAppApplication          : Address Book App Started
+2022-02-13 02:00:26.552  INFO 53223 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-02-13 02:00:26.554  INFO 53223 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-13 02:00:26.559  INFO 53223 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-02-13 02:00:29.908  INFO 53411 --- [restartedMain] c.b.a.AddressBookAppApplication          : Starting AddressBookAppApplication using Java 17.0.1 on dell-Latitude-5490 with PID 53411 (/home/dell/BridgeLabz/AddressBookApp/target/classes started by dell in /home/dell/BridgeLabz/AddressBookApp)
+2022-02-13 02:00:29.910  INFO 53411 --- [restartedMain] c.b.a.AddressBookAppApplication          : The following profiles are active: dev
+2022-02-13 02:00:29.958  INFO 53411 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-02-13 02:00:29.958  INFO 53411 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-02-13 02:00:30.434  INFO 53411 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-02-13 02:00:30.444  INFO 53411 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2022-02-13 02:00:30.786  INFO 53411 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-02-13 02:00:30.791  INFO 53411 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-13 02:00:30.791  INFO 53411 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-02-13 02:00:30.840  INFO 53411 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-13 02:00:30.840  INFO 53411 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 880 ms
+2022-02-13 02:00:30.917  INFO 53411 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-13 02:00:31.114  INFO 53411 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-13 02:00:31.390  INFO 53411 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-02-13 02:00:31.430  WARN 53411 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-02-13 02:00:31.657  INFO 53411 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-02-13 02:00:31.678  INFO 53411 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-02-13 02:00:31.688  INFO 53411 --- [restartedMain] c.b.a.AddressBookAppApplication          : Started AddressBookAppApplication in 2.114 seconds (JVM running for 2.623)
+2022-02-13 02:00:31.690  INFO 53411 --- [restartedMain] c.b.a.AddressBookAppApplication          : Employee Payroll App Started in DEV Environment

@@ -1,0 +1,12 @@
+
+environment: COMMON
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/addressbook_db
+    username: root
+    password: Welcome@123
+server:
+  port: 8081
