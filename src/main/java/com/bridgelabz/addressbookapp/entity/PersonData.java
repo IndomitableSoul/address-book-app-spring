@@ -8,7 +8,7 @@ public class PersonData {
     private long personId;
     private String fullName;
     private String email;
-    private long contact;
+    private String contact;
 
     public PersonData(long personId, PersonDTO personDTO) {
         this.personId = personId;
