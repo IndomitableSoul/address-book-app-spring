@@ -5,7 +5,6 @@ import lombok.ToString;
 
 @Data
 public class PersonDTO {
-
     public String fullName;
     public String email;
     public long contact;

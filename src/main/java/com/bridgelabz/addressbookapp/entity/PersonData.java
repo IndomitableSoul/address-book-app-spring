@@ -5,7 +5,6 @@ import lombok.Data;
 
 @Data
 public class PersonData {
-
     private long personId;
     private String fullName;
     private String email;
