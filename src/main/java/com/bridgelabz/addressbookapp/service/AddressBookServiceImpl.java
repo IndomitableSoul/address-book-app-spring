@@ -2,6 +2,8 @@ package com.bridgelabz.addressbookapp.service;
 
 import com.bridgelabz.addressbookapp.dto.PersonDTO;
 import com.bridgelabz.addressbookapp.entity.PersonData;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -14,7 +16,11 @@ import java.util.List;
 
 @Service
 public class AddressBookServiceImpl implements IAddressBookService{
-   List<PersonData> personDataList = new ArrayList<>();
+
+    @Autowired
+    private ModelMapper modelMapper;
+
+    List<PersonData> personDataList = new ArrayList<>();
 
     @Override
     public List<PersonData> getAddressBook() {
@@ -34,12 +40,15 @@ public class AddressBookServiceImpl implements IAddressBookService{
         return null;
     }
 
+
+    //Used ModelMapper to map DTO to Entity
     @Override
     public PersonData updatePersonDataById(long personId, PersonDTO personDTO) {
         PersonData personData = personDataList.get((int)personId-1);
-        personData.setFullName(personDTO.fullName);
-        personData.setEmail(personDTO.email);
-        personData.setContact(personDTO.contact);
+          modelMapper.map(personDTO, personData);
+//        personData.setFullName(personDTO.fullName);
+//        personData.setEmail(personDTO.email);
+//        personData.setContact(personDTO.contact);
         return personData;
     }
 
