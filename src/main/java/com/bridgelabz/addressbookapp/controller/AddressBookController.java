@@ -54,8 +54,8 @@ public class AddressBookController {
 
     @DeleteMapping("/delete/{personId}")
     public ResponseEntity<ResponseDTO> deletePersonDataById(@PathVariable("personId") long personId){
-        PersonData personData = addressBookService.deletePersonDataById(personId);
-        ResponseDTO responseDTO = new ResponseDTO("Deleted Person with id  " + personId, personData);
+        addressBookService.deletePersonDataById(personId);
+        ResponseDTO responseDTO = new ResponseDTO("Deleted Successfully ", "Person with id: "+personId);
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
 
     }

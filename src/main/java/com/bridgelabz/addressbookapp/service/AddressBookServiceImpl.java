@@ -31,18 +31,18 @@ public class AddressBookServiceImpl implements IAddressBookService{
 
     @Override
     public List<PersonData> getAddressBook() {
-        return personDataList;
+        return addressBookRepository.findAll();
     }
 
     @Override
     public PersonData getPersonDataById(long personID) {
-       return personDataList.stream().filter(personData -> personData.getPersonId() == personID).
-                findFirst().orElseThrow(()->new AddressBookException("Person Not Found, Invalid Id"));
+       return addressBookRepository.findById(personID)
+               .orElseThrow(() -> new AddressBookException("Person with Id "+personID+ " does not exist...!!!"));
     }
 
     @Override
     public PersonData addPersonData(PersonDTO personDTO) {
-        PersonData personData = new PersonData(personDTO);
+        PersonData personData = modelMapper.map(personDTO, PersonData.class);
         log.debug("Person Data: "+personData.toString());
         return addressBookRepository.save(personData);
     }
@@ -52,19 +52,17 @@ public class AddressBookServiceImpl implements IAddressBookService{
     @Override
     public PersonData updatePersonDataById(long personId, PersonDTO personDTO) {
 
-        PersonData personData = personDataList.stream().filter(person -> person.getPersonId() == personId).
-                findFirst().orElseThrow(() -> new AddressBookException("Person Not Found, Invalid Id"));
+        PersonData personData = this.getPersonDataById(personId);
         modelMapper.map(personDTO, personData);
 //        personData.setFullName(personDTO.fullName);
 //        personData.setEmail(personDTO.email);
 //        personData.setContact(personDTO.contact);
-        return personData;
+        return addressBookRepository.save(personData);
     }
 
     @Override
-    public PersonData deletePersonDataById(long personID) {
-        personDataList.stream().filter(person -> person.getPersonId() == personID).
-                findFirst().orElseThrow(()->new AddressBookException("Person Not Found, Invalid Id"));
-        return personDataList.remove((int)personID-1);
+    public void deletePersonDataById(long personID) {
+        PersonData personData = this.getPersonDataById(personID);
+        addressBookRepository.delete(personData);
     }
 }

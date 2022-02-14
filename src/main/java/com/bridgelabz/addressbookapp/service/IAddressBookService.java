@@ -13,5 +13,5 @@ public interface IAddressBookService {
     PersonData getPersonDataById(long personID);
     PersonData addPersonData(PersonDTO personDTO);
     PersonData updatePersonDataById(long personId, PersonDTO personDTO);
-    PersonData deletePersonDataById(long personID);
+    void deletePersonDataById(long personID);
 }

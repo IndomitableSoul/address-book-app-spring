@@ -39,7 +39,7 @@ public class PersonData {
         this.city = personDTO.city;
         this.state = personDTO.state;
         this.zip = personDTO.zip;
-        this.types = personDTO.type;
+        this.types = personDTO.types;
 
     }
 

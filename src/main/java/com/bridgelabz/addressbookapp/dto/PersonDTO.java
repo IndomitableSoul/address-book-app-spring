@@ -37,12 +37,10 @@ public class PersonDTO {
     public String zip;
 
     @NotNull(message = "type should not be Empty")
-    public List<String> type;
+    public List<String> types;
 
     public PersonDTO(String fullName, String gender, String email, String contact,
-                     String address, String city, String state, String zip
-         //   , List<String> type
-    ) {
+                     String address, String city, String state, String zip, List<String> types) {
         this.fullName = fullName;
         this.gender = gender;
         this.email = email;
@@ -51,6 +49,6 @@ public class PersonDTO {
         this.city = city;
         this.state = state;
         this.zip = zip;
-        this.type = type;
+        this.types = types;
     }
 }
