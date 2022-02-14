@@ -3,11 +3,18 @@ package com.bridgelabz.addressbookapp.entity;
 import com.bridgelabz.addressbookapp.dto.PersonDTO;
 import lombok.Data;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "address_book")
 @Data
 public class PersonData {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "personId")
     private long personId;
+    @Column(name = "fullName")
     private String fullName;
     private String gender;
     private String email;
@@ -15,11 +22,15 @@ public class PersonData {
     private String address;
     private String city;
     private String state;
-    private long zip;
+    private String zip;
+
+    @ElementCollection
+    @CollectionTable(name = "person_type", joinColumns = @JoinColumn(name="id"))
+    @Column(name = "type")
     private List<String> types;
 
-    public PersonData(long personId, PersonDTO personDTO) {
-        this.personId = personId;
+    public PersonData(PersonDTO personDTO) {
+
         this.fullName = personDTO.fullName;
         this.gender = personDTO.gender;
         this.email = personDTO.email;
@@ -29,6 +40,10 @@ public class PersonData {
         this.state = personDTO.state;
         this.zip = personDTO.zip;
         this.types = personDTO.type;
+
+    }
+
+    public PersonData() {
 
     }
 }

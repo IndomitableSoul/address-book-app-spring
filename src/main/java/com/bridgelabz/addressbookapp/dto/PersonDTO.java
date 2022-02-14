@@ -33,14 +33,16 @@ public class PersonDTO {
 
     @Pattern(regexp = "^[a-zA-Z\\s]{4,}$", message = "Invalid State name")
     public String state;
-    @Pattern(regexp = "^[1-9]{1}[0-9 \\s]{2,3}[0-9]{3}$", message = "Invalid Zip")
-    public long zip;
+   // @Pattern(regexp = "^[1-9]{1}[0-9 \\s]{2,3}[0-9]{3}$", message = "Invalid Zip")
+    public String zip;
 
     @NotNull(message = "type should not be Empty")
     public List<String> type;
 
     public PersonDTO(String fullName, String gender, String email, String contact,
-                     String address, String city, String state, long zip, List<String> type) {
+                     String address, String city, String state, String zip
+         //   , List<String> type
+    ) {
         this.fullName = fullName;
         this.gender = gender;
         this.email = email;
