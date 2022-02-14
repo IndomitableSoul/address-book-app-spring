@@ -2,6 +2,7 @@ package com.bridgelabz.addressbookapp.service;
 
 import com.bridgelabz.addressbookapp.dto.PersonDTO;
 import com.bridgelabz.addressbookapp.entity.PersonData;
+import com.bridgelabz.addressbookapp.exceptions.AddressBookException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,8 +30,8 @@ public class AddressBookServiceImpl implements IAddressBookService{
 
     @Override
     public PersonData getPersonDataById(long personID) {
-        return personDataList.get((int)personID-1);
-
+       return personDataList.stream().filter(personData -> personData.getPersonId() == personID).
+                findFirst().orElseThrow(()->new AddressBookException("Person Not Found, Invalid Id"));
     }
 
     @Override
@@ -44,8 +45,10 @@ public class AddressBookServiceImpl implements IAddressBookService{
     //Used ModelMapper to map DTO to Entity
     @Override
     public PersonData updatePersonDataById(long personId, PersonDTO personDTO) {
-        PersonData personData = personDataList.get((int)personId-1);
-          modelMapper.map(personDTO, personData);
+
+        PersonData personData = personDataList.stream().filter(person -> person.getPersonId() == personId).
+                findFirst().orElseThrow(() -> new AddressBookException("Person Not Found, Invalid Id"));
+        modelMapper.map(personDTO, personData);
 //        personData.setFullName(personDTO.fullName);
 //        personData.setEmail(personDTO.email);
 //        personData.setContact(personDTO.contact);
@@ -54,6 +57,8 @@ public class AddressBookServiceImpl implements IAddressBookService{
 
     @Override
     public PersonData deletePersonDataById(long personID) {
+        personDataList.stream().filter(person -> person.getPersonId() == personID).
+                findFirst().orElseThrow(()->new AddressBookException("Person Not Found, Invalid Id"));
         return personDataList.remove((int)personID-1);
     }
 }
