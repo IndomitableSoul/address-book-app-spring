@@ -14,4 +14,8 @@ public interface IAddressBookService {
     PersonData addPersonData(PersonDTO personDTO);
     PersonData updatePersonDataById(long personId, PersonDTO personDTO);
     void deletePersonDataById(long personID);
+
+    List<PersonData> findPersonCountByCity(String city);
+    Integer findPersonCountByState(String state);
+
 }

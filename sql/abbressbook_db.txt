@@ -1,0 +1,64 @@
+mysql> show databases;
++------------------------+
+| Database               |
++------------------------+
+| addressbook_db         |          *created
+| addressbook_service_db |
+| emp_payroll_service    |
+| information_schema     |
+| mysql                  |
+| payroll_db             |
+| performance_schema     |
+| sys                    |
++------------------------+
+================================================================================================================
+mysql> use addressbook_db;
+Database changed
+================================================================================================================
+mysql> show tables;
++--------------------------+
+| Tables_in_addressbook_db |
++--------------------------+
+| address_book             |
+| hibernate_sequence       |
+| person_type              |
++--------------------------+
+================================================================================================================
+Added 4 PersonDTO using POST
+
+mysql> select * from address_book;
++-----------+--------------------+-----------+---------------+-------------+---------------+--------+-----------+--------+
+| person_id | address            | city      | contact       | email       | full_name     | gender | state     | zip    |
++-----------+--------------------+-----------+---------------+-------------+---------------+--------+-----------+--------+
+|         1 | Kundallahalli gate | Bangalore | 91 7992483917 | abc@zxc.com | Ashwath Naidu | male   | Karnataka | 560037 |
+|         2 | Jay Nagar          | Bangalore | 91 9798642350 | xyz@zxc.com | Nikita Amar   | female | Karnataka | 560038 |
+|         3 | Greenpark          | Delhi     | 91 9798686879 | xyz@zxc.com | Rajni         | female | Delhi     | 660038 |
+|         4 | Tilak Nagar        | Delhi     | 91 2323232323 | pqz@zxc.com | Hari          | male   | Delhi     | 660039 |
++-----------+--------------------+-----------+---------------+-------------+---------------+--------+-----------+--------+
+
+================================================================================================================
+
+Updated PersonData for id=4 using PUT api
+
+mysql> select * from address_book;
++-----------+--------------------+-----------+---------------+-------------+---------------+--------+-----------+--------+
+| person_id | address            | city      | contact       | email       | full_name     | gender | state     | zip    |
++-----------+--------------------+-----------+---------------+-------------+---------------+--------+-----------+--------+
+|         1 | Kundallahalli gate | Bangalore | 91 7992483917 | abc@zxc.com | Ashwath Naidu | male   | Karnataka | 560037 |
+|         2 | Jay Nagar          | Bangalore | 91 9798642350 | xyz@zxc.com | Nikita Amar   | female | Karnataka | 560038 |
+|         3 | Greenpark          | Delhi     | 91 9798686879 | xyz@zxc.com | Rajni         | female | Delhi     | 660038 |
+|         4 | Tilak Nagar        | Delhi     | 91 2323232323 | pqz@zxc.com | Hari Darshan  | male   | Delhi     | 660039 |
++-----------+--------------------+-----------+---------------+-------------+---------------+--------+-----------+--------+
+4 rows in set (0.00 sec)
+================================================================================================================
+
+Deleted PersonData for Id=1 using DELETE api
+mysql> select * from address_book;
++-----------+-------------+-----------+---------------+-------------+--------------+--------+-----------+--------+
+| person_id | address     | city      | contact       | email       | full_name    | gender | state     | zip    |
++-----------+-------------+-----------+---------------+-------------+--------------+--------+-----------+--------+
+|         2 | Jay Nagar   | Bangalore | 91 9798642350 | xyz@zxc.com | Nikita Amar  | female | Karnataka | 560038 |
+|         3 | Greenpark   | Delhi     | 91 9798686879 | xyz@zxc.com | Rajni        | female | Delhi     | 660038 |
+|         4 | Tilak Nagar | Delhi     | 91 2323232323 | pqz@zxc.com | Hari Darshan | male   | Delhi     | 660039 |
++-----------+-------------+-----------+---------------+-------------+--------------+--------+-----------+--------+
+3 rows in set (0.00 sec)

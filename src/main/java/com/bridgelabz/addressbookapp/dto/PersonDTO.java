@@ -2,7 +2,9 @@ package com.bridgelabz.addressbookapp.dto;
 
 import lombok.Data;
 import lombok.ToString;
+import org.hibernate.validator.constraints.UniqueElements;
 
+import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -21,6 +23,7 @@ public class PersonDTO {
     @NotEmpty(message = "Email must not be empty")
     @Email(message = "Email Not Valid")
     public String email;
+
 
     @Pattern(regexp = "(91 )[1-9]{1}[0-9]{9}", message = "Enter valid mobile number")
     public String  contact;

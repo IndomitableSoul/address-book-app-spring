@@ -42,6 +42,7 @@ public class AddressBookServiceImpl implements IAddressBookService{
 
     @Override
     public PersonData addPersonData(PersonDTO personDTO) {
+
         PersonData personData = modelMapper.map(personDTO, PersonData.class);
         log.debug("Person Data: "+personData.toString());
         return addressBookRepository.save(personData);
@@ -65,4 +66,16 @@ public class AddressBookServiceImpl implements IAddressBookService{
         PersonData personData = this.getPersonDataById(personID);
         addressBookRepository.delete(personData);
     }
+
+    @Override
+    public List<PersonData> findPersonCountByCity(String city) {
+       return addressBookRepository.findPersonCountByCity(city);
+    }
+
+    @Override
+    public Integer findPersonCountByState(String state) {
+        return addressBookRepository.findPersonCountByState(state);
+    }
+
+
 }

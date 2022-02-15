@@ -60,5 +60,18 @@ public class AddressBookController {
 
     }
 
+    @GetMapping( "/count/{city}")
+    public ResponseEntity<ResponseDTO> getPersonDataByCity(@PathVariable("city") String city){
+        List<PersonData> personCountByCity = addressBookService.findPersonCountByCity(city);
+        ResponseDTO responseDTO = new ResponseDTO("No. of persons in  " + city," is " +personCountByCity);
+        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+    }
+
+    @GetMapping( "/countof/{state}")
+    public ResponseEntity<ResponseDTO> getPersonDataByState(@PathVariable("state") String state){
+       Integer personCountByCity = addressBookService.findPersonCountByState(state);
+        ResponseDTO responseDTO = new ResponseDTO("No. of persons in  " + state," is " +personCountByCity);
+        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
+    }
 
 }

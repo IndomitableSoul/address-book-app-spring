@@ -17,7 +17,10 @@ public class PersonData {
     @Column(name = "fullName")
     private String fullName;
     private String gender;
+
+    @Column(unique = true)
     private String email;
+    @Column(unique = true)
     private String contact;
     private String address;
     private String city;

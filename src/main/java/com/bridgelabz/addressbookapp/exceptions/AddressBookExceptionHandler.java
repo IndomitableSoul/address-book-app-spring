@@ -8,6 +8,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,5 +30,13 @@ public class AddressBookExceptionHandler {
         ResponseDTO responseDTO = new ResponseDTO("Exception while processing REST Request", exception.getMessage());
         return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
+    public ResponseEntity<ResponseDTO> handleSQLIntegrityConstraintViolationException(SQLIntegrityConstraintViolationException exception){
+
+        ResponseDTO responseDTO = new ResponseDTO("Exception while processing REST Request",  exception.getMessage());
+        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.BAD_REQUEST);
+    }
+
 
 }
